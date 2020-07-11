@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap");
+
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Raleway;
+    color: #1B2522;
+
+    --title-duration: 500ms;
+    --sub-title-duration: 500ms;
+    --nav-duration: 200ms;
+    --btn-grow-duration: 200ms;
+    --scroll-down-duration: 200ms;
+    
+    --sub-title-delay: calc(var(--title-duration) - 200ms);
+    --nav-delay: calc(var(--sub-title-delay) + var(--sub-title-duration));
+    --btn-grow-delay: var(--nav-delay);
+    --scroll-down-delay: var(--nav-delay);
+
+    
+}
+
+.full-screen-header { 
+    min-height: 100vh;
+    background-image: url('Robotics.jpg');
+    background-size: cover;
+    background-position-x: 40%;
+    background-position-y: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;   
+    position: relative;
+    overflow: hidden;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: .5rem 1rem;
+
+}
+
+
+.nav-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    animation: nav-enter var(--nav-duration) var(--nav-delay) backwards;   
+}
+
+.logo {
+    width: 60px;
+    height: 50px;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    text-emphasis: wrap;
+
+}
+
+.nav-list a {
+    padding: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+
+    transition: color 100ms;
+    
+}
+
+.nav-list a:hover {
+    color: hsl(200, 20%, 50%);
+    box-shadow: 0 0 5px 0 hsl(200, 20%, 75%);
+
+    
+}
+
+
+.title {
+    font-size: 6.5rem;
+    margin: 0;
+    font-weight: bold;
+    color: linear-gradient(to top hsl(200, 50%, 100%) 0%, (hsl(156, 69%, 90%) 75%, hsl(200, 100%, 70%) 100%));
+
+    animation: title-enter var(--title-duration);
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+
+    animation: sub-title-enter var(--sub-title-duration) var(--sub-title-delay) backwards;
+}
+
+
+.btn {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+    padding: .25em 1em;
+    border-radius: 10000px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;  
+    
+    transition: 100ms;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: hsl(200, 100%, 40%);
+    box-shadow: 0 0 5px 0 hsl(200, 100%, 70%);
+}
+
+.btn-nav {
+    background-color: hsl(200, 20%, 50%);
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: .25em;   
+
+    
+}
+
+.btn-1 {
+    font-size: inherit;
+    padding: 10px;
+    color: white;
+
+}
+
+.btn-1:hover,
+.btn-1:focus {
+    background-color: hsl(156, 69%, 90%);
+    box-shadow: 0 0 5px 0 rgb(253, 137, 209);
+
+    
+}
+
+.scroll-down-icon {
+    position: absolute;
+    bottom: 1rem;
+    width: 30px;
+
+    animation: scroll-down-bounce calc(var(--scroll-down-duration) + var(--scroll-down-delay)) 1s alternate infinite linear,
+    scroll-down-enter var(--scroll-down-duration) var(--scroll-down-delay) backwards;
+}
+
+.section {
+    padding: 2rem;
+}
+
+.section-title {
+    margin: 0;
+    margin-bottom: rem;
+    margin-top: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 450px));
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 50px;
+}   
+
+.category-grid-item {
+    display: flex;
+    align-items: center;
+}
+
+.category-grid-item img:hover {
+    animation: shake 100ms;
+  
+}
+
+.category-grid-item img {
+    width: 60px;
+    margin-right: 1rem;
+
+}
+
+.catergory-grid-item:hover {
+    animation: shake 100ms;
+    
+}
+
+.section-accent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('robothand.jpg');
+    background-size: cover;   
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    color: rgb(46, 46, 87);
+    
+}
+
+.last-section {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url("lightbulbII.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    max-width: 100%;    
+}
+
+.contact-us {
+   font-size: 3rem;
+   margin: 0;
+   text-align: center;
+   color: white;
+}
+
+.sub-title {
+    color: white;
+    text-align: center;
+    font-size: 1em;
+}
+
+.form {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding-top: .25rem;
+    margin-bottom: .75rem;
+    outline: none;
+    border: 1px solid rgb(253, 137, 209);
+    border-radius: 1.5em;
+    padding: .5em;
+    color: white;
+    font-family: inherit;
+
+    transition: border-color 100ms;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 75px;
+    max-height: 200px;
+}
+
+.form input:focus,
+.form textarea:focus {
+    color: hsl(200, 100%, 20%);
+    background-color: rgb(205, 240, 248);
+    box-shadow: 0 0 5px 0 hsl(330, 97%, 62%);
+}
+
+.btn-container {
+    text-align: end;
+}
+
+.btn-square {
+    border-radius: .3em;
+}
+
+.section-robot {
+    color: #404040;
+    background-size: cover;
+}
+
+.robot-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+    align-items: center;
+    column-gap: 100px;
+    padding: 0;
+    flex-wrap: wrap;   
+}
+
+.robot-grid-item img{
+    border-radius: 5rem;
+}
+
+.robot-grid-item img:hover {
+    animation: radius-hover 300ms forwards;
+}
+ 
+
+.robot-title {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    color: hsl(216, 76%, 22%);   
+}
+
+.final-section {
+    background-image: url('universejeep.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.final-title {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.final-sub-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: .5rem;
+    padding-top: 0;
+}
+
+.footer {
+    width: 100%;
+    background-image: url('universejeep.jpg');
+    background-position: bottom;
+    background-size: cover;
+}
+
+.btn-grow {
+    animation: btn-grow-enter var(--btn-grow-duration) var(--btn-grow-delay) backwards; 
+}
+
+.btn-grow:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px 1px black;
+}
+
+
+@keyframes title-enter {
+    from {
+      transform: translateX(-100vw);
+    }
+  }
+  
+  @keyframes sub-title-enter {
+    from {
+      transform: translateX(100vw);
+        }
+    }
+
+  @keyframes btn-grow-enter {
+      from {
+          transform: scale(0);
+      }
+    }
+
+  @keyframes shake {
+    25% {
+       transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+  }
+
+  @keyframes nav-enter {
+      from {
+          transform: translateY(-100%);
+      }
+    }
+
+  @keyframes scroll-down-bounce {
+      from {
+          transform: translateY(0);
+      }
+
+      to {
+          transform: translateY(10px);
+      }
+  }
+
+@keyframes scroll-down-enter {
+    from {
+        transform: scale(0) rotate(180deg);
+    }
+}
+
+@keyframes radius-hover {
+    from {
+        border-radius: 3rem;
+    }
+
+    to {
+        border-radius: 0;
+    }
+}
